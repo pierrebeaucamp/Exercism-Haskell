@@ -1,9 +1,9 @@
 module DNA (toRNA) where
 
 toRNA :: String -> String
-toRNA s = map translate s where translate c = case c of
-                                                  'C' -> 'G'
-                                                  'G' -> 'C'
-                                                  'A' -> 'U'
-                                                  'T' -> 'A'
+toRNA s = let translate 'C' = 'G'
+              translate 'G' = 'C'
+              translate 'A' = 'U'
+              translate 'T' = 'A'
+          in  map translate s
 
